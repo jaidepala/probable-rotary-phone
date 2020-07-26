@@ -1,0 +1,52 @@
+{
+  "name": "probable-rotary-phone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start-env": "if-env NODE_ENV=production ?? npm run start-prod || npm run start-dev",
+    "start-prod": "node .",
+    "start-dev": "nodenv -f .",
+    "preload": "node -r dotenv/config index.js",
+    "ss": "npm run start-server",
+    "sc": "npm run start-client",
+    "start-server": "nodemon index.js",
+    "start-client": "cd client && npm start",
+    "start-both": "concurrently --kill-others \"npm run start-server\" \"npm run start-client\" ",
+    "install-both": "concurrently --kill-others \"npm install\" \"cd client\" \"npm install\" ",
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaidepala/probable-rotary-phone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaidepala/probable-rotary-phone/issues"
+  },
+  "engines": {
+    "node": "8.12.0",
+    "npm": "6.4.1"
+  },
+  "homepage": "https://github.com/jaidepala/probable-rotary-phone#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^3.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "http-proxy-middleware": "^1.0.5",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.9.24",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "dotenv": "^8.2.0",
+    "node-env-run": "^3.0.2",
+    "nodemon": "^2.0.4"
+  }
+}
