@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
+// Components
+import SliderComponent from '../../components/slider/slider.component';
+
 class AccountPage extends Component {
     render() {
         return (
             <div>
-                AccountPage
+                <SliderComponent />
             </div>
         );
     }

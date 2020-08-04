@@ -24,7 +24,10 @@ import AccountPage from './pages/account/account.page';
 import MyOrderPage from './pages/my-order/my-order.page';
 import ProductPage from './pages/product/product.page';
 
-const { Header, Sider, Content } = Layout;
+// Styled
+import { SiteOverlay, SiteLayout } from './App.styled';
+
+const { Content } = Layout;
 
 class App extends Component {
 
@@ -44,30 +47,23 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Layout>
-          <SidebarComponent toggleSideBar={collapsed} />
-          <Layout className="site-layout">
+        <Layout hasSider={true}>
+          <SidebarComponent toggleSideBar={collapsed} handleClick={this.toggle} />
+          <SiteLayout className="site-layout">
             <HeaderComponent toggleSideBar={collapsed} handleClick={this.toggle} />
-            <Content
-              className="site-layout-background"
-              style={{
-                margin: '24px 16px',
-                padding: 24,
-                minHeight: 280,
-              }}
-            >
-              Content
+            <SiteOverlay active={!collapsed} onClick={this.toggle} />
+            <Content className="site-layout-background">
               <Switch>
-                  <Route exact path="/" component={LoginPage} />
-                  <Route path="/login" component={LoginPage} />
-                  <Route path="/account" component={AccountPage} />
-                  <Route path="/my-orders" component={MyOrderPage} />
-                  <Route path="/products" component={ProductPage} />
-                  {/* <Route component={LoginPage} /> */}
+                <Route exact path="/" component={LoginPage} />
+                <Route path="/login" component={LoginPage} />
+                <Route path="/account" component={AccountPage} />
+                <Route path="/my-orders" component={MyOrderPage} />
+                <Route path="/products" component={ProductPage} />
+                {/* <Route component={LoginPage} /> */}
                 {/* </Route> */}
               </Switch>
             </Content>
-          </Layout>
+          </SiteLayout>
         </Layout>
       </div>
     );
