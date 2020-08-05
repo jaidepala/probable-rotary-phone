@@ -54,7 +54,7 @@ class IconCatalogueComponent extends Component {
                 {
                     list.map((food) => {
                         return (
-                            <IconCatalogueLink href="#home">
+                            <IconCatalogueLink key={food.src} href="#home">
                                 <IconCatalogueImage src={'/836545-barbecue/png/' + food.src} alt=""/>
                                 { food.title }
                             </IconCatalogueLink>

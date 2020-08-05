@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import 'antd/dist/antd.css';
 import { HeartOutlined, HeartFilled, EllipsisOutlined, ShoppingCartOutlined, ShoppingCartFilled } from '@ant-design/icons';
 
 import { Card } from 'antd';
@@ -9,6 +8,7 @@ import { Card } from 'antd';
 import SliderComponent from '../../components/slider/slider.component';
 import IconCatalogueComponent from '../../components/icon-catalogue/icon-catalogue.component';
 import ShopWidgetComponent from '../../components/shop-widget/shop-widget.component';
+import SearchBarComponent from '../../components/search-bar/search-bar.component';
 
 // Styled
 import { ProductWrapper, ProductContainer, ProductCard, ProductImage, ProductCardDescription } from './product.styled';
@@ -114,6 +114,8 @@ class ProductPage extends Component {
 
         return (
             <>
+                <SearchBarComponent />
+
                 <IconCatalogueComponent />
 
                 <ShopWidgetComponent />
