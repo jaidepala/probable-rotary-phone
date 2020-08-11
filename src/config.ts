@@ -18,6 +18,13 @@ if (process.env.NODE_ENV !== 'production') {
     };
 };
 
+// const config = {
+//     endpoint: process.env.MONGODB_URI,
+//     masterKey: process.env.API_KEY,
+//     port: process.env.PORT
+// };
+
+// export default config;
 module.exports = {
     endpoint: process.env.MONGODB_URI,
     masterKey: process.env.API_KEY,
